@@ -1,6 +1,6 @@
 # Machine learning project - fake news detection step-by-step
 ## About project
-This project is a comprehensive exploration of Natural Language Processing (NLP) and supervised machine learning techniques applied to the challenge of fake news detection. It involves the development and evaluation of various classifiers, feature engineering, and ensemble methods to maximize precision in identifying fake news.\
+This project is an exploration of Natural Language Processing (NLP) and supervised machine learning techniques applied to the challenge of fake news detection. It involves the development and evaluation of various classifiers, feature engineering, and ensemble methods to maximize precision in identifying fake news.\
 Done in collaboration with [**@CCzarek**](https://github.com/CCzarek/)
 
 ### Data source:
@@ -28,8 +28,8 @@ After testing model scores with different thresholds, we chose max_df = 0.6 and 
 ## Building and testing models
 
 To begin, we tried out basic machine learning models, from Python library scikit-learn: 
-  - ExtraTreeClassifier(),
-  - RandomForestClassifier(),
+- ExtraTreeClassifier(),
+- RandomForestClassifier(),
 - LogisticRegression(),
 - GradientBoostingClassifier(),
 - DecisionTreeClassifier(),
@@ -43,7 +43,7 @@ To somehow measure, how good those models predict target variable in our test se
 - f1
 - ROC AUC score
 
-### ROC AUC curve for tested models looks like this:
+### ROC curve for tested models looks like this:
 ![](https://i.imgur.com/RsurQjD.png)\
 As we see, the best classifiers seems to be XGB, RFT and GBC. Other metrics say more or less the same:
 
@@ -57,7 +57,7 @@ XGBoost             |  GBC
 :-------------------------:|:-------------------------:
 <img src="https://i.imgur.com/UdPQtUt.png" alt="image" width="100%" height="auto">  |  <img src="https://i.imgur.com/5vyC0Ni.png" alt="image" width="100%" height="auto">
 
-We clearly see: feature importance for XGBoost model seems balanced, with the columns we artificially added in preprocessing on top. In the same time, GB Classifier bases its prediction heavily on only one variable: the word 'reuters'. Same observation could be seen in other models, in a bit smaller scale. \
+We clearly see: feature importance for XGBoost model seems balanced, with the columns we artificially added in preprocessing on top. At the same time, GB Classifier bases its prediction heavily on only one variable: the word 'reuters'. Same observation could be seen in other models, in a bit smaller scale. \
 \
 let's evaluate the performance of our models if we completely remove the word "reuters" from the training and test sets:
 
